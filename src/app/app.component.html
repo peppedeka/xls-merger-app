@@ -1,0 +1,33 @@
+<h1>celiachia facile xls merger</h1>
+<input type="file" multiple (change)="onFileChange($event)" />
+<button (click)="download()">download</button>
+<table id="table">
+  <tr>
+    <th><b>MENDOLA SRL</b></th>
+    <th>
+      VIA FEDERICO DE ROBERTO, 109/A<br />
+      93100 CALTANISSETTA CL <br />
+      P. IVA: 01914980857
+    </th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <tr>
+    <th>Articolo</th>
+    <th>Descrizionne</th>
+    <th>Quantità</th>
+    <th>Valore unitario</th>
+    <th>Valore Totale</th>
+  </tr>
+  <ng-container>
+    <tr *ngFor="let row of rows$ | async">
+      <td>{{ row.articolo }}</td>
+      <td>{{ row.descrizione }}</td>
+      <td>{{ row.quantita }}</td>
+      <td>{{ row.valoreUnitario }}€</td>
+      <td>{{ row.valoreTotale }}€</td>
+    </tr>
+  </ng-container>
+</table>
